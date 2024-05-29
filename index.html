@@ -49,13 +49,42 @@
     <h1>Exposure Value (EV) Calculator</h1>
     <form id="ev-calculator-form">
         <label for="aperture">Aperture (f-stop):</label>
-        <input type="number" id="aperture" name="aperture" step="0.1" min="0.1" required>
+        <select id="aperture" name="aperture" required>
+            <option value="1.2">f/1.2</option>
+            <option value="1.4">f/1.4</option>
+            <option value="1.8">f/1.8</option>
+            <option value="2.0">f/2.0</option>
+            <option value="2.8">f/2.8</option>
+            <option value="4.0">f/4.0</option>
+            <option value="5.6">f/5.6</option>
+            <option value="8.0">f/8.0</option>
+            <option value="11">f/11</option>
+            <option value="16">f/16</option>
+            <option value="22">f/22</option>
+        </select>
         
         <label for="shutter-speed">Shutter Speed (seconds):</label>
-        <input type="number" id="shutter-speed" name="shutter-speed" step="0.001" min="0.001" required>
+        <select id="shutter-speed" name="shutter-speed" required>
+            <option value="0.00025">1/4000</option>
+            <option value="0.0005">1/2000</option>
+            <option value="0.001">1/1000</option>
+            <option value="0.002">1/500</option>
+            <option value="0.004">1/250</option>
+            <option value="0.008">1/125</option>
+            <option value="0.016">1/60</option>
+            <option value="0.033">1/30</option>
+            <option value="0.067">1/15</option>
+            <option value="0.125">1/8</option>
+            <option value="0.25">1/4</option>
+            <option value="0.5">1/2</option>
+            <option value="1">1</option>
+        </select>
         
         <label for="iso">ISO:</label>
         <input type="number" id="iso" name="iso" required>
+
+        <label for="ev">Exposure Value (EV):</label>
+        <input type="number" id="ev" name="ev">
         
         <button type="button" onclick="calculateEV()">Calculate EV</button>
     </form>
