@@ -20,3 +20,17 @@ function calculate() {
 
     document.getElementById('result').innerText = resultText;
 }
+
+// Calculate Exposure Value (EV)
+function calculateEV() {
+    var aperture = document.getElementById('aperture').value;
+    var shutterSpeed = document.getElementById('shutter-speed').value;
+    var iso = document.getElementById('iso').value;
+
+    if (aperture && shutterSpeed && iso) {
+        var ev = Math.log2(Math.pow(aperture, 2) / shutterSpeed) + Math.log2(iso / 100);
+        document.getElementById('ev-result').innerText = 'Exposure Value (EV): ' + ev.toFixed(2);
+    } else {
+        document.getElementById('ev-result').innerText = 'Please enter values for Aperture, Shutter Speed, and ISO.';
+    }
+}
