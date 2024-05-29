@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Bitrate Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Video Bitrate Calculator</h1>
+        <form id="calculator-form">
+            <label for="bitrate">Bitrate (Mbps):</label>
+            <input type="number" id="bitrate" name="bitrate" required>
+            
+            <label for="length">Video Length (minutes):</label>
+            <input type="number" id="length" name="length" required>
+            
+            <label for="filesize">File Size (GB):</label>
+            <input type="number" id="filesize" name="filesize">
+            
+            <button type="button" onclick="calculate()">Calculate</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
