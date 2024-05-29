@@ -21,16 +21,28 @@ function calculate() {
     document.getElementById('result').innerText = resultText;
 }
 
-// Calculate Exposure Value (EV)
+/// Calculate Exposure Value (EV)
 function calculateEV() {
-    var aperture = document.getElementById('aperture').value;
-    var shutterSpeed = document.getElementById('shutter-speed').value;
-    var iso = document.getElementById('iso').value;
+    var aperture = parseFloat(document.getElementById('aperture').value);
+    var shutterSpeed = parseFloat(document.getElementById('shutter-speed').value);
+    var iso = parseFloat(document.getElementById('iso').value);
+    var ev = parseFloat(document.getElementById('ev').value);
 
-    if (aperture && shutterSpeed && iso) {
-        var ev = Math.log2(Math.pow(aperture, 2) / shutterSpeed) + Math.log2(iso / 100);
-        document.getElementById('ev-result').innerText = 'Exposure Value (EV): ' + ev.toFixed(2);
+    if (ev) {
+        // Calculate missing value based on entered values
+        if (aperture && shutterSpeed && iso) {
+            ev = Math.log2(Math.pow(aperture, 2) / shutterSpeed) + Math.log2(iso / 100);
+        } else if (aperture && shutterSpeed) {
+            iso = Math.pow(2, ev - Math.log2(Math.pow(aperture, 2) / shutterSpeed)) * 100;
+        } else if (aperture && iso) {
+            shutterSpeed = Math.pow(2, ev - Math.log2(iso / 100)) * Math.pow(aperture, 2);
+        } else if (shutterSpeed && iso) {
+            aperture = Math.sqrt(Math.pow(2, ev - Math.log2(iso / 100)) * shutterSpeed);
+        }
+        document.getElementById('ev-result').innerText = `Aperture: f/${aperture.toFixed(1)}, Shutter Speed: 1/${Math.round(1/shutterSpeed)}, ISO: ${iso.toFixed()}, Exposure Value (EV): ${ev.toFixed(2)}`;
     } else {
-        document.getElementById('ev-result').innerText = 'Please enter values for Aperture, Shutter Speed, and ISO.';
+        // Calculate EV if it is not provided
+        ev = Math.log2(Math.pow(aperture, 2) / shutterSpeed) + Math.log2(iso / 100);
+        document.getElementById('ev-result').innerText = `Aperture: f/${aperture.toFixed(1)}, Shutter Speed: 1/${Math.round(1/shutterSpeed)}, ISO: ${iso.toFixed()}, Exposure Value (EV): ${ev.toFixed(2)}`;
     }
 }
