@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitrate Calculator - PhotoCalc</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 onclick="window.location.href='index.html'">PhotoCalc</h1> 
+        <button onclick="window.location.href='index.html'">Home</button>
+    </header>
+    <main>
+        <h2>Bitrate Calculator</h2>
+        <p>Calculate the bitrate, video length, or file size. Leave one field empty.</p>
+        <form id="bitrate-calculator-form">
+            <label for="bitrate">Bitrate:</label>
+            <input type="number" id="bitrate" name="bitrate">
+            <select id="bitrate-units">
+                <option value="Mbps">Mbps</option>
+                <option value="Kbps">Kbps</option>
+            </select>
+            
+            <label for="video-length">Video Length:</label>
+            <input type="number" id="video-length" name="video-length">
+            <select id="video-length-units">
+                <option value="minutes">Minutes</option>
+                <option value="seconds">Seconds</option>
+            </select>
+
+            <label for="file-size">File Size (GB):</label>
+            <input type="number" id="file-size" name="file-size">
+            
+            <button type="button" onclick="calculateBitrate()">Calculate</button>
+        </form>
+        <div id="bitrate-result"></div>
+    </main>
+    <script src="bitrate-calculator.js"></script>
+</body>
+</html>

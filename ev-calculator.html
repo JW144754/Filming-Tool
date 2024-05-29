@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exposure Value (EV) Calculator - PhotoCalc</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 onclick="window.location.href='index.html'">PhotoCalc</h1> 
+        <button onclick="window.location.href='index.html'">Home</button>
+    </header>
+    <main>
+        <h2>Exposure Value (EV) Calculator</h2>
+        <p>Calculate aperture, shutter speed, ISO, or EV. Leave one field empty.</p>
+        <form id="ev-calculator-form">
+            <label for="aperture">Aperture (f-stop):</label>
+            <select id="aperture" name="aperture">
+                <option value="">--Select Aperture--</option>
+                <option value="1.2">f/1.2</option>
+                <option value="1.4">f/1.4</option>
+                <option value="1.8">f/1.8</option>
+                <option value="2">f/2</option>
+                <option value="2.8">f/2.8</option>
+                <option value="4">f/4</option>
+                <option value="5.6">f/5.6</option>
+                <option value="8">f/8</option>
+                <option value="11">f/11</option>
+                <option value="16">f/16</option>
+                <option value="22">f/22</option>
+            </select>
+            
+            <label for="shutter-speed">Shutter Speed (seconds):</label>
+            <select id="shutter-speed" name="shutter-speed">
+                <option value="">--Select Shutter Speed--</option>
+                <option value="0.0005">1/2000</option>
+                <option value="0.001">1/1000</option>
+                <option value="0.002">1/500</option>
+                <option value="0.004">1/250</option>
+                <option value="0.008">1/125</option>
+                <option value="0.016">1/60</option>
+                <option value="0.033">1/30</option>
+                <option value="0.066">1/15</option>
+                <option value="0.125">1/8</option>
+                <option value="0.25">1/4</option>
+                <option value="0.5">1/2</option>
+                <option value="1">1</option>
+            </select>
+            
+            <label for="iso">ISO:</label>
+            <input type="number" id="iso" name="iso">
+
+            <label for="ev">Exposure Value (EV):</label>
+            <input type="number" id="ev" name="ev">
+            
+            <button type="button" id="calculate-button">Calculate</button>
+        </form>
+        <div id="ev-result"></div>
+    </main>
+    <script src="ev-calculator.js"></script>
+</body>
+</html>
