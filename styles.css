@@ -1,75 +1,91 @@
-/* General Styles */
+:root {
+    /* Default colors (Dark Mode) */
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --header-background-color: #1f1f1f;
+    --header-text-color: #ffffff;
+    --button-background-color: #333333;
+    --button-text-color: #ffffff;
+    --button-hover-background-color: #555555;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        /* Light Mode colors */
+        --background-color: #ffffff;
+        --text-color: #000000;
+        --header-background-color: #f0f0f0;
+        --header-text-color: #000000;
+        --button-background-color: #dddddd;
+        --button-text-color: #000000;
+        --button-hover-background-color: #bbbbbb;
+    }
+}
+
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
-.container {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+header {
+    background-color: var(--header-background-color);
+    color: var(--header-text-color);
     text-align: center;
-    width: 100%;
-    max-width: 600px;
-    box-sizing: border-box;
-    transform: scale(1);
-    transform-origin: top left;
-    margin-bottom: 20px; /* Add margin to separate the calculators */
+    padding: 1em;
 }
 
-h1 {
-    margin-bottom: 20px;
+nav {
+    display: flex;
+    justify-content: center;
+    margin: 1em 0;
+}
+
+nav button {
+    margin: 0 1em;
+    padding: 0.5em 1em;
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    border: none;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: var(--button-hover-background-color);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
 }
 
-input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-    box-sizing: border-box;
+label, input, select, button {
+    margin: 0.5em 0;
 }
 
 button {
-    padding: 10px;
+    padding: 0.5em 1em;
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
     border: none;
-    background-color: #007BFF;
-    color: white;
-    border-radius: 4px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
-}
-
-#result {
-    margin-top: 20px;
-    font-size: 1.2em;
-}
-
-@media (max-width: 600px) {
-    .container {
-        padding: 10px;
-    }
-    h1 {
-        font-size: 1.5em;
-    }
-    button {
-        font-size: 1em;
-    }
+    background-color: var(--button-hover-background-color);
 }
