@@ -3,90 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Bitrate Calculator</title>
+    <title>PhotoCalc</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .container {
-            width: 100%;
-            max-width: 600px;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Video Bitrate Calculator</h1>
-        <form id="calculator-form">
-            <label for="bitrate">Bitrate (Mbps):</label>
-            <input type="number" id="bitrate" name="bitrate" required>
-            
-            <label for="length">Video Length (minutes):</label>
-            <input type="number" id="length" name="length" required>
-            
-            <label for="filesize">File Size (GB):</label>
-            <input type="number" id="filesize" name="filesize">
-            
-            <button type="button" onclick="calculate()">Calculate</button>
-        </form>
-        <div id="result"></div>
-    </div>
-    <script src="script.js"></script>
+    <header>
+        <h1>PhotoCalc</h1>
+    </header>
+    <nav>
+        <button onclick="window.location.href='bitrate-calculator.html'">Bitrate Calculator</button>
+        <button onclick="window.location.href='ev-calculator.html'">Exposure Value Calculator</button>
+    </nav>
+    <main>
+        <h2>Welcome to PhotoCalc</h2>
+        <p>Choose a calculator to get started:</p>
+        <button onclick="window.location.href='bitrate-calculator.html'">Bitrate Calculator</button>
+        <button onclick="window.location.href='ev-calculator.html'">Exposure Value Calculator</button>
+    </main>
+    <script src="scripts.js"></script>
 </body>
 </html>
-
-<!-- Exposure Value Calculator -->
-<div class="container">
-    <h1>Exposure Value (EV) Calculator</h1>
-    <form id="ev-calculator-form">
-        <label for="aperture">Aperture (f-stop):</label>
-        <select id="aperture" name="aperture" required>
-            <option value="1.2">f/1.2</option>
-            <option value="1.4">f/1.4</option>
-            <option value="1.8">f/1.8</option>
-            <option value="2.0">f/2.0</option>
-            <option value="2.8">f/2.8</option>
-            <option value="4.0">f/4.0</option>
-            <option value="5.6">f/5.6</option>
-            <option value="8.0">f/8.0</option>
-            <option value="11">f/11</option>
-            <option value="16">f/16</option>
-            <option value="22">f/22</option>
-        </select>
-        
-        <label for="shutter-speed">Shutter Speed (seconds):</label>
-        <select id="shutter-speed" name="shutter-speed" required>
-            <option value="0.00025">1/4000</option>
-            <option value="0.0005">1/2000</option>
-            <option value="0.001">1/1000</option>
-            <option value="0.002">1/500</option>
-            <option value="0.004">1/250</option>
-            <option value="0.008">1/125</option>
-            <option value="0.016">1/60</option>
-            <option value="0.033">1/30</option>
-            <option value="0.067">1/15</option>
-            <option value="0.125">1/8</option>
-            <option value="0.25">1/4</option>
-            <option value="0.5">1/2</option>
-            <option value="1">1</option>
-        </select>
-        
-        <label for="iso">ISO:</label>
-        <input type="number" id="iso" name="iso" required>
-
-        <label for="ev">Exposure Value (EV):</label>
-        <input type="number" id="ev" name="ev">
-        
-        <button type="button" onclick="calculateEV()">Calculate EV</button>
-    </form>
-    <div id="ev-result"></div>
-</div>
