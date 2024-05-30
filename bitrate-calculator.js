@@ -27,6 +27,12 @@ function calculateBitrate() {
         document.getElementById('bitrate').value = (bitrate).toFixed(2); // Show result in Kbps
         document.getElementById('bitrate-units').value = "Kbps";
     }
+}
+
+function toggleLock(fieldId) {
+    var field = document.getElementById(fieldId);
+    field.disabled = !field.disabled;
+}
 
 document.querySelectorAll('#bitrate, #video-length, #file-size').forEach(input => {
     input.addEventListener('input', calculateBitrate);
