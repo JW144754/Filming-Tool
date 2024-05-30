@@ -4,8 +4,8 @@ function calculateBitrate() {
     var videoLength = parseFloat(document.getElementById('video-length').value);
     var videoLengthUnits = document.getElementById('video-length-units').value;
     var fileSize = parseFloat(document.getElementById('file-size').value);
-    
-if (bitrateUnits === "Mbps") {
+
+    if (bitrateUnits === "Mbps") {
         bitrate = bitrate * 1000; // Convert Mbps to Kbps
     }
 
@@ -28,5 +28,6 @@ if (bitrateUnits === "Mbps") {
         document.getElementById('bitrate-units').value = "Kbps";
     }
 
-    document.getElementById('bitrate-result').innerText = `Bitrate: ${bitrate.toFixed(2)} ${bitrateUnits}, Video Length: ${videoLength.toFixed(2)} ${videoLengthUnits}, File Size: ${fileSize.toFixed(2)} GB`;
-}
+document.querySelectorAll('#bitrate, #video-length, #file-size').forEach(input => {
+    input.addEventListener('input', calculateBitrate);
+});
