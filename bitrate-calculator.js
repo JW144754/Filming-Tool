@@ -4,8 +4,8 @@ function calculateBitrate() {
     var videoLength = parseFloat(document.getElementById('video-length').value);
     var videoLengthUnits = document.getElementById('video-length-units').value;
     var fileSize = parseFloat(document.getElementById('file-size').value);
-
-    if (bitrateUnits === "Mbps") {
+    
+if (bitrateUnits === "Mbps") {
         bitrate = bitrate * 1000; // Convert Mbps to Kbps
     }
 
