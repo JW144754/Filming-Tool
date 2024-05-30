@@ -5,8 +5,10 @@ function calculateBitrate() {
     var videoLengthUnits = document.getElementById('video-length-units').value;
     var fileSize = parseFloat(document.getElementById('file-size').value);
 
-    if (videoLengthUnits === "minutes") {
-        videoLength *= 60; // Convert to seconds
+      if (videoLengthUnits === "seconds") {
+        videoLength = videoLength / 60; // Convert seconds to minutes
+    } else if (videoLengthUnits === "hours") {
+        videoLength = videoLength * 60; // Convert hours to minutes
     }
 
     if (bitrateUnits === "Kbps") {
