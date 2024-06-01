@@ -8,18 +8,19 @@
 </head>
 <body>
     <header>
-        <h1>CamCalc</h1>
+        <h1 onclick="window.location.href='index.html'">CamCalc</h1>
+        <nav>
+            <button onclick="window.location.href='bitrate-calculator.html'">Bitrate Calculator</button>
+            <button onclick="window.location.href='ev-calculator.html'">EV Calculator</button>
+        </nav>
     </header>
-    <nav>
-        <button onclick="window.location.href='bitrate-calculator.html'">Bitrate Calculator</button>
-        <button onclick="window.location.href='ev-calculator.html'">Exposure Value Calculator</button>
-    </nav>
     <main>
         <h2>Welcome to CamCalc</h2>
-        <p>Choose a calculator to get started:</p>
-        <button onclick="window.location.href='bitrate-calculator.html'">Bitrate Calculator</button>
-        <button onclick="window.location.href='ev-calculator.html'">Exposure Value Calculator</button>
+        <p>Your ultimate tool for calculating video filesize and exposure value.</p>
     </main>
-    <script src="scripts.js"></script>
+    <footer>
+        Support CamCalc by donating:
+        <button onclick="window.location.href='https://www.paypal.com/donate/?hosted_button_id=UD9ZFY6TVJLGN'">Donate</button>
+    </footer>
 </body>
 </html>
