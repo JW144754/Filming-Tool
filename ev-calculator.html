@@ -10,123 +10,124 @@
     <header>
         <h1 onclick="window.location.href='index.html'">CamCalc</h1>
         <nav>
-            <button onclick="window.location.href='index.html'">Home</button>
             <button onclick="window.location.href='bitrate-calculator.html'">Bitrate Calculator</button>
-            <button onclick="window.location.href='ev-calculator.html'">EV Calculator</button>
         </nav>
     </header>
     <main>
-        <h2>Exposure Value (EV) Calculator</h2>
-        <p>Calculate aperture, shutter speed, ISO, or EV. Leave one field empty.</p>
-        <form id="ev-calculator-form">
-            <label for="aperture">Aperture (f-stop):</label>
-            <div class="input-lock">
-                <select id="aperture" name="aperture">
-                    <option value="">--Select Aperture--</option>
-                    <option value="1.4">f/1.4</option>
-                    <option value="1.8">f/1.8</option>
-                    <option value="2">f/2</option>
-                    <option value="2.8">f/2.8</option>
-                    <option value="3.5">f/3.5</option>
-                    <option value="4">f/4</option>
-                    <option value="5.6">f/5.6</option>
-                    <option value="6.3">f/6.3</option>
-                    <option value="7.1">f/7.1</option>
-                    <option value="8">f/8</option>
-                    <option value="9">f/9</option>
-                    <option value="10">f/10</option>
-                    <option value="11">f/11</option>
-                    <option value="13">f/13</option>
-                    <option value="14">f/14</option>
-                    <option value="16">f/16</option>
-                    <option value="18">f/18</option>
-                    <option value="20">f/20</option>
-                    <option value="22">f/22</option>
-                </select>
-                <button type="button" onclick="toggleLock('aperture')">🔒</button>
-            </div>
-            
-            <label for="shutter-speed">Shutter Speed (seconds):</label>
-            <div class="input-lock">
-                <select id="shutter-speed" name="shutter-speed">
-                    <option value="">--Select Shutter Speed--</option>
-                    <option value="1/8000">1/8000</option>
-                    <option value="1/6400">1/6400</option>
-                    <option value="1/5000">1/5000</option>
-                    <option value="1/4000">1/4000</option>
-                    <option value="1/3200">1/3200</option>
-                    <option value="1/2500">1/2500</option>
-                    <option value="1/2000">1/2000</option>
-                    <option value="1/1600">1/1600</option>
-                    <option value="1/1250">1/1250</option>
-                    <option value="1/1000">1/1000</option>
-                    <option value="1/800">1/800</option>
-                    <option value="1/640">1/640</option>
-                    <option value="1/500">1/500</option>
-                    <option value="1/400">1/400</option>
-                    <option value="1/320">1/320</option>
-                    <option value="1/250">1/250</option>
-                    <option value="1/200">1/200</option>
-                    <option value="1/160">1/160</option>
-                    <option value="1/125">1/125</option>
-                    <option value="1/100">1/100</option>
-                    <option value="1/80">1/80</option>
-                    <option value="1/60">1/60</option>
-                    <option value="1/50">1/50</option>
-                    <option value="1/40">1/40</option>
-                    <option value="1/30">1/30</option>
-                    <option value="1/25">1/25</option>
-                    <option value="1/20">1/20</option>
-                    <option value="1/15">1/15</option>
-                    <option value="1/13">1/13</option>
-                    <option value="1/10">1/10</option>
-                    <option value="1/8">1/8</option>
-                    <option value="1/6">1/6</option>
-                    <option value="1/5">1/5</option>
-                    <option value="1/4">1/4</option>
-                    <option value="1/3">1/3</option>
-                    <option value="1/2.5">1/2.5</option>
-                    <option value="1/2">1/2</option>
-                    <option value="1/1.6">1/1.6</option>
-                    <option value="1/1.3">1/1.3</option>
-                    <option value="1">1</option>
-                </select>
-                <button type="button" onclick="toggleLock('shutter-speed')">🔒</button>
-            </div>
-            
-            <label for="iso">ISO:</label>
-            <div class="input-lock">
-                <select id="iso" name="iso">
-                    <option value="">--Select ISO--</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                    <option value="200">200</option>
-                    <option value="400">400</option>
-                    <option value="640">640</option>
-                    <option value="800">800</option>
-                    <option value="1600">1600</option>
-                    <option value="3200">3200</option>
-                    <option value="6400">6400</option>
-                    <option value="12800">12800</option>
-                    <option value="25600">25600</option>
-                    <option value="51200">51200</option>
-                    <option value="102400">102400</option>
-                </select>
-                <button type="button" onclick="toggleLock('iso')">🔒</button>
-            </div>
+        <div class="container">
+            <h2>Exposure Value (EV) Calculator</h2>
+            <p>Calculate aperture, shutter speed, ISO, or EV. Leave one field empty.</p>
+            <form id="ev-calculator-form">
+                <label for="aperture">Aperture (f-stop):</label>
+                <div class="input-lock">
+                    <select id="aperture" name="aperture">
+                        <option value="">--Select Aperture--</option>
+                        <option value="1.4">f/1.4</option>
+                        <option value="1.8">f/1.8</option>
+                        <option value="2">f/2</option>
+                        <option value="2.8">f/2.8</option>
+                        <option value="3.5">f/3.5</option>
+                        <option value="4">f/4</option>
+                        <option value="5.6">f/5.6</option>
+                        <option value="6.3">f/6.3</option>
+                        <option value="7.1">f/7.1</option>
+                        <option value="8">f/8</option>
+                        <option value="9">f/9</option>
+                        <option value="10">f/10</option>
+                        <option value="11">f/11</option>
+                        <option value="13">f/13</option>
+                        <option value="14">f/14</option>
+                        <option value="16">f/16</option>
+                        <option value="18">f/18</option>
+                        <option value="20">f/20</option>
+                        <option value="22">f/22</option>
+                    </select>
+                    <button type="button" onclick="toggleLock('aperture')">🔒</button>
+                </div>
+                
+                <label for="shutter-speed">Shutter Speed (seconds):</label>
+                <div class="input-lock">
+                    <select id="shutter-speed" name="shutter-speed">
+                        <option value="">--Select Shutter Speed--</option>
+                        <option value="1/8000">1/8000</option>
+                        <option value="1/6400">1/6400</option>
+                        <option value="1/5000">1/5000</option>
+                        <option value="1/4000">1/4000</option>
+                        <option value="1/3200">1/3200</option>
+                        <option value="1/2500">1/2500</option>
+                        <option value="1/2000">1/2000</option>
+                        <option value="1/1600">1/1600</option>
+                        <option value="1/1250">1/1250</option>
+                        <option value="1/1000">1/1000</option>
+                        <option value="1/800">1/800</option>
+                        <option value="1/640">1/640</option>
+                        <option value="1/500">1/500</option>
+                        <option value="1/400">1/400</option>
+                        <option value="1/320">1/320</option>
+                        <option value="1/250">1/250</option>
+                        <option value="1/200">1/200</option>
+                        <option value="1/160">1/160</option>
+                        <option value="1/125">1/125</option>
+                        <option value="1/100">1/100</option>
+                        <option value="1/80">1/80</option>
+                        <option value="1/60">1/60</option>
+                        <option value="1/50">1/50</option>
+                        <option value="1/40">1/40</option>
+                        <option value="1/30">1/30</option>
+                        <option value="1/25">1/25</option>
+                        <option value="1/20">1/20</option>
+                        <option value="1/15">1/15</option>
+                        <option value="1/13">1/13</option>
+                        <option value="1/10">1/10</option>
+                        <option value="1/8">1/8</option>
+                        <option value="1/6">1/6</option>
+                        <option value="1/5">1/5</option>
+                        <option value="1/4">1/4</option>
+                        <option value="1/3">1/3</option>
+                        <option value="1/2.5">1/2.5</option>
+                        <option value="1/2">1/2</option>
+                        <option value="1/1.6">1/1.6</option>
+                        <option value="1/1.3">1/1.3</option>
+                        <option value="1">1</option>
+                    </select>
+                    <button type="button" onclick="toggleLock('shutter-speed')">🔒</button>
+                </div>
+                
+                <label for="iso">ISO:</label>
+                <div class="input-lock">
+                    <select id="iso" name="iso">
+                        <option value="">--Select ISO--</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="400">400</option>
+                        <option value="640">640</option>
+                        <option value="800">800</option>
+                        <option value="1600">1600</option>
+                        <option value="3200">3200</option>
+                        <option value="6400">6400</option>
+                        <option value="12800">12800</option>
+                        <option value="25600">25600</option>
+                        <option value="51200">51200</option>
+                        <option value="102400">102400</option>
+                    </select>
+                    <button type="button" onclick="toggleLock('iso')">🔒</button>
+                </div>
 
-            <label for="ev">Exposure Value (EV):</label>
-            <div class="input-lock">
-                <input type="number" id="ev" name="ev">
-                <button type="button" onclick="toggleLock('ev')">🔒</button>
-            </div>
-            
-            <button type="button" id="clear-button">Clear All</button>
-        </form>
-        <div id="ev-result"></div>
+                <label for="ev">Exposure Value (EV):</label>
+                <div class="input-lock">
+                    <input type="number" id="ev" name="ev">
+                    <button type="button" onclick="toggleLock('ev')">🔒</button>
+                </div>
+                
+                <button type="button" id="clear-button">Clear All</button>
+            </form>
+            <div id="ev-result"></div>
+        </div>
     </main>
     <footer>
         <p>&copy; 2024 CamCalc. All rights reserved.</p>
+        Support CamCalc by donating:<br>
         <button onclick="window.location.href='https://www.buymeacoffee.com/'">Donate</button>
     </footer>
     <script src="ev-calculator.js"></script>
