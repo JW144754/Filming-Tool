@@ -1,46 +1,56 @@
 :root {
     /* Default colors (Dark Mode) */
-    --background-color: #121212;
+    --background-color-top: #3D63DD;
+    --background-color-bottom: #111111;
+    --container-color-top: #222325;
+    --container-color-bottom: #111113;
     --text-color: #ffffff;
-    --header-background-color: #1f1f1f;
+    --header-background-color: #111111;
     --header-text-color: #ffffff;
-    --button-background-color: #333333;
+    --button-background-color: #172448;
     --button-text-color: #ffffff;
-    --button-hover-background-color: #555555;
+    --button-hover-background-color: #243974;
 }
 
 @media (prefers-color-scheme: light) {
     :root {
         /* Light Mode colors */
-        --background-color: #ffffff;
+        --background-color-top: #3D63DD;
+        --background-color-bottom: #FFFFFF;
+        --container-color-top: #FCFCFD;
+        --container-color-bottom: #EFF0F3;
         --text-color: #000000;
-        --header-background-color: #f0f0f0;
+        --header-background-color: #FFFFFF;
         --header-text-color: #000000;
-        --button-background-color: #dddddd;
+        --button-background-color: #EDF2FE;
         --button-text-color: #000000;
-        --button-hover-background-color: #bbbbbb;
+        --button-hover-background-color: #D0DFFF;
     }
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: var(--background-color);
+    background: linear-gradient(to bottom, var(--background-color-top), var(--background-color-bottom));
     color: var(--text-color);
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
 }
 
-header {
+header, footer {
     background-color: var(--header-background-color);
     color: var(--header-text-color);
     text-align: center;
     padding: 1em;
-    position: absolute;
-    top: 0;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 nav {
@@ -82,7 +92,9 @@ label, input, select, button {
 }
 
 button {
-    padding: 0.5em 1em;
+    padding: 0.8em 1.8em; /* Increase the padding to make the button larger */
+    font-size: 1.2em; /* Increase the font size */
+    border-radius: 8px; /* Set the border radius to create rounded corners */
     background-color: var(--button-background-color);
     color: var(--button-text-color);
     border: none;
@@ -94,13 +106,28 @@ button:hover {
 }
 
 footer {
-    text-align: center;
-    padding: 1em;
-    background-color: var(--header-background-color);
-    color: var(--header-text-color);
-    position: absolute;
+    position: relative;
     bottom: 0;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer button {
+    margin-top: 10px; /* Adjust as needed */
+    padding: 0.5em 1em;
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    border: none;
+    cursor: pointer;
+}
+
+footer button:hover {
+    background-color: var(--button-hover-background-color);
 }
 
 .input-lock {
@@ -120,4 +147,27 @@ footer {
 .locked {
     background-color: #ddd;
     pointer-events: none;
+}
+
+.container {
+    max-width: 90%; /* Set a maximum width for the container */
+    margin: auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding inside the container */
+    border-radius: 15px; /* Set the border radius to create rounded corners */
+    background-color: transparent; /* Set background color to transparent */
+    background-image: linear-gradient(to bottom, var(--container-color-top), var(--container-color-bottom)); /* Set the background image */    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Include padding and border in the total width and height */
+}
+
+.container h2 {
+    margin-top: 0; /* Remove default margin */
+    margin-bottom: 20px; /* Add margin below the heading */
+}
+
+.container p {
+    margin-top: 0; /* Remove default margin */
+    margin-bottom: 20px; /* Add margin below the paragraph */
 }
