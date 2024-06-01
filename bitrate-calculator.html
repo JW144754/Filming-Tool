@@ -17,7 +17,7 @@
         <form id="bitrate-calculator-form">
             <label for="bitrate">Bitrate:</label>
             <div class="input-lock">
-                <input type="number" id="bitrate" name="bitrate">
+                <input type="number" id="bitrate" name="bitrate" step="0.01">
                 <select id="bitrate-units">
                     <option value="Mbps">Mbps</option>
                     <option value="Kbps">Kbps</option>
@@ -27,7 +27,7 @@
             
             <label for="video-length">Video Length:</label>
             <div class="input-lock">
-                <input type="number" id="video-length" name="video-length">
+                <input type="number" id="video-length" name="video-length" step="0.01">
                 <select id="video-length-units">
                     <option value="seconds">Seconds</option>
                     <option value="minutes">Minutes</option>
@@ -38,12 +38,17 @@
 
             <label for="file-size">File Size (GB):</label>
             <div class="input-lock">
-                <input type="number" id="file-size" name="file-size">
+                <input type="number" id="file-size" name="file-size" step="0.01">
                 <button type="button" onclick="toggleLock('file-size')">🔒</button>
             </div>
         </form>
         <div id="bitrate-result"></div>
+        <button id="clear-all">Clear All</button>
     </main>
+    <footer>
+        Support CamCalc by donating:
+        <button onclick="window.location.href='https://www.paypal.com/donate/?hosted_button_id=UD9ZFY6TVJLGN'">Donate</button>
+    </footer>
     <script src="bitrate-calculator.js"></script>
 </body>
 </html>
