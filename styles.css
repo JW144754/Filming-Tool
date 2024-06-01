@@ -38,6 +38,9 @@ header {
     color: var(--header-text-color);
     text-align: center;
     padding: 1em;
+    position: absolute;
+    top: 0;
+    width: 100%;
 }
 
 nav {
@@ -88,4 +91,28 @@ button {
 
 button:hover {
     background-color: var(--button-hover-background-color);
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: var(--header-background-color);
+    color: var(--header-text-color);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.input-lock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-lock input {
+    margin-right: 0.5em;
+}
+
+.input-lock button {
+    margin-left: 0.5em;
 }
