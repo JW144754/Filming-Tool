@@ -116,3 +116,8 @@ footer {
 .input-lock button {
     margin-left: 0.5em;
 }
+
+.locked {
+    background-color: #ddd;
+    pointer-events: none;
+}
